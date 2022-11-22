@@ -1,8 +1,14 @@
 // webpack的配置文件
+
 const path = require('path');
+
+// 插件使用之前需要require进来
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // 多页应用
 module.exports = {
+    // 插件使用之前需要在plugins new
+    plugins: [new MiniCssExtractPlugin({ filename: 'css/[name].css' })],
     entry: {
         'index': './src/page/index/index.js',
         'user': './src/page/user/index.js',
@@ -62,7 +68,10 @@ module.exports = {
                 'i' : ignore大小写
                 */
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                // 旧: css嵌在js中
+                // use: ['style-loader', 'css-loader'],
+                // 使用MiniCssExtractPlugin ,css代码分离
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
         ],
     },
