@@ -2,9 +2,10 @@
   "name": "front-store",
   "version": "1.0.0",
   "description": "Store前端项目",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/DecHzy/front-store/issues"
   },
-  "homepage": "https://github.com/DecHzy/front-store#readme"
+  "homepage": "https://github.com/DecHzy/front-store#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
 }
