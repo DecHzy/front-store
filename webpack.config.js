@@ -51,4 +51,19 @@ module.exports = {
         },
     },
     mode: 'development',
+    module: {
+        rules: [
+            {
+                /* 
+                正则:
+                '/' : 范围
+                '\.': 转义符号 + . 代表所有
+                '$' : 代表相对地址
+                'i' : ignore大小写
+                */
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
 };
