@@ -4,14 +4,29 @@ const path = require('path');
 
 // 插件使用之前需要require进来
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // 多页应用
 module.exports = {
     // 插件使用之前需要在plugins new
-    plugins: [new MiniCssExtractPlugin({ filename: 'css/[name].css' })],
+    plugins: [
+        new MiniCssExtractPlugin({ filename: 'css/[name].css' }),
+        new HtmlWebpackPlugin({
+            template: './src/view/index.html',
+            filename: 'my_views/[name].html',
+            inject: true,
+            hash: false,
+            chunks: ['my-commons', 'index'],
+        })
+    ],
     entry: {
         'index': './src/page/index/index.js',
         'user': './src/page/user/index.js',
+    },
+    devServer: {
+        static: './dist',
+        host: '127.0.0.1',
+        port: '80',
     },
     output: {
         filename: 'js/[name].js',
