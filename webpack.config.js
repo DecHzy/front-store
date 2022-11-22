@@ -5,11 +5,50 @@ const path = require('path');
 module.exports = {
     entry: {
         'index': './src/page/index/index.js',
-        'user1': './src/page/user/index.js',
+        'user': './src/page/user/index.js',
     },
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist'),
+    },
+    // 优化配置
+    optimization: {
+        /* 
+        提取公共模块
+        * 下面这个配置对象代表 SplitChunksPlugin 的默认行为。 
+        * https://webpack.docschina.org/plugins/split-chunks-plugin 
+        */
+        // splitChunks: {
+        //     chunks: 'async',
+        //     minSize: 20000,
+        //     minRemainingSize: 0,
+        //     minChunks: 1,
+        //     maxAsyncRequests: 30,
+        //     maxInitialRequests: 30,
+        //     enforceSizeThreshold: 50000,
+        //     cacheGroups: {
+        //         defaultVendors: {
+        //             test: /[\\/]node_modules[\\/]/,
+        //             priority: -10,
+        //             reuseExistingChunk: true,
+        //         },
+        //         default: {
+        //             minChunks: 2,
+        //             priority: -20,
+        //             reuseExistingChunk: true,
+        //         },
+        //     },
+        // },
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    name: 'my-commons',
+                    chunks: 'all',
+                    minChunks: 2,
+                    minSize: 0,
+                },
+            },
+        },
     },
     mode: 'development',
 };
