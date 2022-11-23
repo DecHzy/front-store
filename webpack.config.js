@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     // 插件使用之前需要在plugins new
     plugins: [
-        new MiniCssExtractPlugin({ filename: 'css/[name].css' }),
+        new MiniCssExtractPlugin({filename: 'css/[name].css'}),
         new HtmlWebpackPlugin({
             template: './src/view/index.html',
             filename: 'my_views/[name].html',
@@ -37,6 +37,9 @@ module.exports = {
         // 别名
         alias: {
             node_modules: path.resolve(__dirname, 'node_modules'),
+            page        : path.resolve(__dirname, 'src/page'),
+            utils       : path.resolve(__dirname, 'src/utils'),
+            view        : path.resolve(__dirname, 'src/view'),
         }
     },
     // 优化配置
@@ -98,12 +101,12 @@ module.exports = {
             {
                 test: /\.htm$/i,
                 use:
-                {
-                    loader: 'html-loader',
-                    options: {
-                        esModule: false,
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            esModule: false,
+                        },
                     },
-                },
             },
             {
                 test: /\.(tty|eot|woff2|svg|woff|otf)$/i,

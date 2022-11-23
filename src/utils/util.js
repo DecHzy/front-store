@@ -1,5 +1,5 @@
 let obj = {
-    a: 'util test',
-    b: 2,
+    a: 'util test a',
+    b: 'util test b',
 };
 module.exports = obj;

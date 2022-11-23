@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rmdir /s /q  .\\dist && webpack",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "go": "rmdir /s /q  .\\dist && webpack && webpack serve --open"
   },
   "repository": {
     "type": "git",

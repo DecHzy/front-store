@@ -3,13 +3,9 @@ body {
     font-size: 12px;
 }
 
-/* 测试修改背景颜色*/
-body {
-    background-color: #2B2B2CFF;
-}
 
 h1 {
-    color: yellow;
+    color: red;
 }
 
 * {
@@ -122,3 +118,6 @@ label {
 input[type='checkbox'] {
     cursor: pointer;
 }
+/* END CSS Reset*/
+
+
