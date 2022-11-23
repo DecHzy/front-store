@@ -1,5 +1,11 @@
+/* 整个项目的样式文件 */
 body {
     font-size: 12px;
+}
+
+/* 测试修改背景颜色*/
+body {
+    background-color: #2B2B2CFF;
 }
 
 h1 {
@@ -14,14 +20,6 @@ h1 {
 
 /* 定宽布局 */
 /* position: relative 相对布局 */
-.w {
-    width: auto;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
-
-/* 定宽布局 */
 .w {
     width: 1080px;
     margin: 0 auto;
