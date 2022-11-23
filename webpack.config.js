@@ -31,6 +31,13 @@ module.exports = {
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'resources/[name][ext][query]',
+    },
+    resolve: {
+        // 别名
+        alias: {
+            node_modules: path.resolve(__dirname, 'node_modules'),
+        }
     },
     // 优化配置
     optimization: {
@@ -88,6 +95,20 @@ module.exports = {
                 // 使用MiniCssExtractPlugin ,css代码分离
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
+            {
+                test: /\.htm$/i,
+                use:
+                {
+                    loader: 'html-loader',
+                    options: {
+                        esModule: false,
+                    },
+                },
+            },
+            {
+                test: /\.(tty|eot|woff2|svg|woff|otf)$/i,
+                type: 'asset/resource',
+            }
         ],
     },
 };

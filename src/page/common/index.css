@@ -5,3 +5,59 @@ body {
 h1 {
     color: yellow;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 定宽布局 */
+/* position: relative 相对布局 */
+.w {
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 全局通用样式 */
+.hide {
+    display: none;
+}
+
+.link {
+    color: rgb(255, 0, 17);
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+/* 伪类 */
+.link:hover {
+    color: chartreuse;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    border: none;
+    background-color: rgb(32, 103, 166);
+    color: #fff;
+    font-size: 17px;
+}
+
+.btn-mini{
+    height: 25px;
+    line-height: 25px;
+    font-size: 10px;
+   
+}
+
+/* CSS Reset
+众所周知，现在所使用的主流浏览器对一些标签的默认属性上并没有做到统一，所以我们偶尔会发现，某个页面在chrome浏览器上很正常，到了firefox上面却有意想不到的偏差。当然编程人员不喜欢这样的兼容性问题的，而reset.css就是解决默认样式不兼容问题的办法之一。
+链接：https://www.jianshu.com/p/69ba47248774
+ */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
